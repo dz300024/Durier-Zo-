@@ -1,1 +1,122 @@
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+
+/* HEADER */
+header {
+    background: #c85c40;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* SLIDER */
+.slider {
+    display: flex;
+    background: #f7f7f7;
+}
+
+.slider .slide-text {
+    width: 50%;
+    padding: 40px;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+/* MENU CATÉGORIES */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    background: #d35e46;
+    padding: 15px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* PEINTURES */
+.paintings {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.paintings img {
+    width: 30%;
+    height: auto;
+}
+
+/* BANDEAU TEXTE */
+.banner {
+    background: #a6a876;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* SCULPTURES GRID */
+.sculptures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 40px;
+}
+
+.sculptures img {
+    width: 100%;
+    height: auto;
+}
+
+/* SECTION MUSÉE */
+.museum {
+    background: #eaeada;
+    padding: 40px;
+    text-align: center;
+}
+
+.museum img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* LARGE FINAL IMAGE */
+.final-img img {
+    width: 100%;
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    background: #c85c40;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+footer h4 {
+    margin-top: 0;
+}
+
+footer .icons span {
+    font-size: 30px;
+    margin-right: 15px;
+}
