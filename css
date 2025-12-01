@@ -1,8 +1,8 @@
-
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
 }
 
 /* HEADER */
@@ -19,22 +19,66 @@ header nav a {
     color: white;
     margin-left: 20px;
     text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+header nav a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.logo img {
+    height: 50px;  /* C'est la hauteur max du logo. Tu peux changer (ex: 50px ou 80px) */
+    width: 100px;   /* Garde les proportions de l'image (ne l'écrase pas) */
+    display: block; /* Supprime les petits espaces fantômes sous l'image */
+    border-radius: 5px; /* Optionnel : arrondit légèrement les coins si c'est une photo carrée */
+}
+
+.h1 {
+    text-align: center;
+    padding: 50px;
 }
 
 /* SLIDER */
 .slider {
     display: flex;
     background: #f7f7f7;
+    /* On s'assure que le slider prend toute la largeur */
+    width: 100%; 
+    min-height: 450px;
 }
 
 .slider .slide-text {
     width: 50%;
     padding: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* CENTRAGE VERTICAL */
+    align-items: center;      /* CENTRAGE HORIZONTAL */
+    
+    text-align: center;      /* texte centré */
+}
+
+.slider h1 {
+    margin-bottom: 20px; /* Espace entre le titre et le texte */
+    font-size: 36px;
+    color: #000; /* Force le noir si besoin */
+    font-weight: bold;
+}
+
+.slider p {
+    font-size: 18px;
+    max-width: 80%; /* Empêche le texte de toucher les bords */
+    line-height: 1.5; /* Rend la lecture plus aérée */
 }
 
 .slider img {
-    width: 100%;
+    display: flex;
+    width: 82vh;
     height: auto;
+    object-fit: cover;
+    margin-left: auto;
 }
 
 /* MENU CATÉGORIES */
@@ -47,8 +91,17 @@ header nav a {
 
 .categories a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bold;
+    transition: all 0.3s ease; /* animation fluide */
+}
+
+.categories a:hover {
+    color: white;
+    text-shadow: 
+        0 0 1px #fff,
+        0 0 10px #fff,
+        0 0 20px #ffddb7;
 }
 
 /* PEINTURES */
@@ -66,7 +119,9 @@ header nav a {
 /* BANDEAU TEXTE */
 .banner {
     background: #a6a876;
-    padding: 40px 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 20px 20px;
     text-align: center;
     color: #333;
 }
@@ -75,19 +130,39 @@ header nav a {
 .sculptures {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    padding: 40px;
+    padding: 0;
+    margin: 0;
 }
+
+.sculptures .block {
+    height: 450px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 
 .sculptures img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sculptures p {
+    font-size: 20px;
+    line-height: 2.0;
+    text-align: center;
+    max-width: 75%;
 }
 
 /* SECTION MUSÉE */
 .museum {
     background: #eaeada;
-    padding: 40px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.6;
     text-align: center;
 }
 
@@ -106,7 +181,7 @@ header nav a {
 /* FOOTER */
 footer {
     background: #c85c40;
-    color: white;
+    color: black;
     display: flex;
     justify-content: space-between;
     padding: 40px;
