@@ -1,13 +1,29 @@
+/* Variables CSS */
+:root {
+    --primary-color: #c85c40;
+    --secondary-color: #d35e46;
+    --accent-color: #a6a876;
+    --text-color: #333;
+    --link-color: black;
+    --link-hover-color: white;
+    --background-color: #fff;
+    --footer-text-color: black;
+    --footer-background-color: #c85c40;
+    --font-size-large: 36px;
+    --font-size-medium: 20px;
+}
+
+/* GLOBAL STYLES */
 body {
     margin: 0;
-    background: #fff;
+    background: var(--background-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
 }
 
 /* HEADER */
 header {
-    background: #c85c40;
+    background: var(--primary-color);
     color: white;
     padding: 15px;
     display: flex;
@@ -28,49 +44,41 @@ header nav a:hover {
 }
 
 .logo img {
-    height: 50px;  /* C'est la hauteur max du logo. Tu peux changer (ex: 50px ou 80px) */
-    width: 100px;   /* Garde les proportions de l'image (ne l'écrase pas) */
-    display: block; /* Supprime les petits espaces fantômes sous l'image */
-    border-radius: 5px; /* Optionnel : arrondit légèrement les coins si c'est une photo carrée */
-}
-
-.h1 {
-    text-align: center;
-    padding: 50px;
+    height: 50px;  
+    width: 100px;   
+    display: block;
+    border-radius: 5px;
 }
 
 /* SLIDER */
 .slider {
     display: flex;
     background: #f7f7f7;
-    /* On s'assure que le slider prend toute la largeur */
-    width: 100%; 
+    width: 100%;
     min-height: 450px;
 }
 
 .slider .slide-text {
     width: 50%;
     padding: 40px;
-    
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* CENTRAGE VERTICAL */
-    align-items: center;      /* CENTRAGE HORIZONTAL */
-    
-    text-align: center;      /* texte centré */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .slider h1 {
-    margin-bottom: 20px; /* Espace entre le titre et le texte */
-    font-size: 36px;
-    color: #000; /* Force le noir si besoin */
+    margin-bottom: 20px;
+    font-size: var(--font-size-large);
+    color: #000;
     font-weight: bold;
 }
 
 .slider p {
     font-size: 18px;
-    max-width: 80%; /* Empêche le texte de toucher les bords */
-    line-height: 1.5; /* Rend la lecture plus aérée */
+    max-width: 80%;
+    line-height: 1.5;
 }
 
 .slider img {
@@ -85,23 +93,20 @@ header nav a:hover {
 .categories {
     display: flex;
     justify-content: space-around;
-    background: #d35e46;
+    background: var(--secondary-color);
     padding: 15px;
 }
 
 .categories a {
     text-decoration: none;
-    color: black;
+    color: var(--link-color);
     font-weight: bold;
-    transition: all 0.3s ease; /* animation fluide */
+    transition: all 0.3s ease;
 }
 
 .categories a:hover {
-    color: white;
-    text-shadow: 
-        0 0 1px #fff,
-        0 0 10px #fff,
-        0 0 20px #ffddb7;
+    color: var(--link-hover-color);
+    text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 20px #ffddb7;
 }
 
 /* PEINTURES */
@@ -118,12 +123,12 @@ header nav a:hover {
 
 /* BANDEAU TEXTE */
 .banner {
-    background: #a6a876;
-    font-size: 20px;
+    background: var(--accent-color);
+    font-size: var(--font-size-medium);
     line-height: 1.8;
     padding: 20px 20px;
     text-align: center;
-    color: #333;
+    color: var(--text-color);
 }
 
 /* SCULPTURES GRID */
@@ -135,14 +140,13 @@ header nav a:hover {
 }
 
 .sculptures .block {
-    height: 450px; 
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0px;
     box-sizing: border-box;
 }
-
 
 .sculptures img {
     width: 100%;
@@ -151,7 +155,7 @@ header nav a:hover {
 }
 
 .sculptures p {
-    font-size: 20px;
+    font-size: var(--font-size-medium);
     line-height: 2.0;
     text-align: center;
     max-width: 75%;
@@ -161,7 +165,7 @@ header nav a:hover {
 .museum {
     background: #eaeada;
     padding: 20px;
-    font-size: 20px;
+    font-size: var(--font-size-medium);
     line-height: 1.6;
     text-align: center;
 }
@@ -180,8 +184,8 @@ header nav a:hover {
 
 /* FOOTER */
 footer {
-    background: #c85c40;
-    color: black;
+    background: var(--footer-background-color);
+    color: var(--footer-text-color);
     display: flex;
     justify-content: space-between;
     padding: 40px;
@@ -194,4 +198,38 @@ footer h4 {
 footer .icons span {
     font-size: 30px;
     margin-right: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slider {
+        flex-direction: column;
+    }
+
+    .slider .slide-text, .slider img {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .categories {
+        flex-direction: column;
+    }
+
+    .paintings img {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .sculptures {
+        grid-template-columns: 1fr;
+    }
+
+    .sculptures .block {
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
